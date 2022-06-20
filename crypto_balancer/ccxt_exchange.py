@@ -11,10 +11,11 @@ class CCXTExchange():
         self.name = name
         self.currencies = currencies
         self.exch = getattr(ccxt, name)({'nonce': ccxt.Exchange.milliseconds})
-        self.exch.proxies= {
+        if os.getenv("FIXIE_URL") is not None:
+            self.exch.proxies= {
                 "http"  : os.environ.get('FIXIE_URL', ''),
                 "https" : os.environ.get('FIXIE_URL', '')
-        }
+            }
         self.exch.apiKey = api_key
         self.exch.secret = api_secret
         self.exch.load_markets()
