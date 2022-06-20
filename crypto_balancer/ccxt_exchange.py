@@ -13,8 +13,8 @@ class CCXTExchange():
         self.exch = getattr(ccxt, name)({'nonce': ccxt.Exchange.milliseconds})
         if os.getenv("FIXIE_URL") is not None:
             self.exch.proxies= {
-                "http"  : os.environ.get('FIXIE_URL', ''),
-                "https" : os.environ.get('FIXIE_URL', '')
+                "http"  : os.environ.get('PROXY_URL', ''),
+                "https" : os.environ.get('PROXY_URL', '')
             }
         self.exch.apiKey = api_key
         self.exch.secret = api_secret

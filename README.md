@@ -5,13 +5,10 @@
 **USE AT YOUR OWN RISK. THIS TRADES REAL MONEY. NO WARRANTY IS GIVEN**
 
 A script that can connect to a cryptocurrency exchange and buy/sell cryptocurrency to keep your portfolio balancer to a certain ratio.
+this fork supports the use of a proxy in case you need to use a static ip adress.
 
-## To support this project
+This fork was made to be used on Xponential crypto: https://xcryptofund.io
 
-To support this project, feel free to send any tips in XRP to:
-https://www.xrptipbot.com/u:HammerToe/n:twitter
-
-Or direct to `rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY` dest tag `8172226`
 
 ## Install
 
@@ -23,7 +20,7 @@ pip install crypto_balancer
 Via source from Github:
 
 ```
-git clone git@github.com:hammertoe/crypto_balancer.git
+git clone https://github.com/draczer01/Crypto_Reflex.git
 cd crypto_balancer
 virtualenv --python=python3 .
 . bin/activate
@@ -48,6 +45,8 @@ targets = XRP 40
 ```
 
 By default it values the portfolio in USDT, this can be changed with `--valuebase` argument.
+
+To configure a proxy, simply create an enviroment variable named `PROXY_URL`
 
 ## Running
 
