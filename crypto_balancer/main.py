@@ -2,6 +2,7 @@ import argparse
 import configparser
 import logging
 import sys
+import json
 
 from crypto_balancer.simple_balancer import SimpleBalancer
 from crypto_balancer.ccxt_exchange import CCXTExchange, exchanges
@@ -22,6 +23,8 @@ def main(args=None):
         description='Balance holdings on an exchange.')
     parser.add_argument('--trade', action="store_true",
                         help='Actually place orders')
+    parser.add_argument('--json', action="json",
+                        help='returns the data as a json')
     parser.add_argument('--force', action="store_true",
                         help='Force rebalance')
     parser.add_argument('--max_orders', default=5,
@@ -72,6 +75,7 @@ def main(args=None):
     max_orders = int(args.max_orders)
 
     portfolio = Portfolio.make_portfolio(targets, exchange, threshold, valuebase)
+    curr_portafolio = portfolio
 
     print("Current Portfolio:")
     for cur in portfolio.balances:
@@ -148,6 +152,9 @@ def main(args=None):
         for order in res['orders']:
             print("  " + str(order))
 
+
+    if args.json:
+        return json.dumps({"portfolio_value": portfolio.valuation_quote, "currency": portfolio.quote_currency, "cost": total_fee, "successfull_orders": res['success'], "error_orders": res['errors'], "orders": res['orders'], "previous_portfolio": curr_portafolio , "proposed_portfolio":res['proposed_portfolio']})
 
 if __name__ == '__main__':
     main()

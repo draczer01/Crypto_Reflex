@@ -5,7 +5,7 @@
 **USE AT YOUR OWN RISK. THIS TRADES REAL MONEY. NO WARRANTY IS GIVEN**
 
 A script that can connect to a cryptocurrency exchange and buy/sell cryptocurrency to keep your portfolio balancer to a certain ratio.
-this fork supports the use of a proxy in case you need to use a static ip adress.
+this fork supports the use of a proxy in case you need to use a static ip address.
 
 This fork was made to be used on Xponential crypto: https://xcryptofund.io
 
@@ -29,7 +29,7 @@ pip install -e .
 ```
 
 ## Config
-Create a config file in `config.ini` with definition of your exchange and portfolio percentages, and theshold (percent) that rebalancing is needed.
+Create a config file in `config.ini` with the definition of your exchange and portfolio percentages, and theshold (percent) that rebalancing is needed.
 An example config file is included at `config.ini.example` but below is all you need:
 
 ```
@@ -46,7 +46,9 @@ targets = XRP 40
 
 By default it values the portfolio in USDT, this can be changed with `--valuebase` argument.
 
-To configure a proxy, simply create an enviroment variable named `PROXY_URL`
+To configure a proxy, simply create an environment variable named `PROXY_URL`
+
+To get the the data returned as json simply use: `--json` 
 
 ## Running
 
@@ -93,7 +95,7 @@ Proposed Portfolio:
   USDT   262.48   (10.02 / 10.00%)
 
   Total value: 2619.28 USDT
-  Balance error: 0.032
+  Balance error: 0.032definition
   Total fees to re-balance: 0.00199 USDT
 
 Orders:
@@ -132,7 +134,6 @@ Proposed Portfolio:
 Orders:
   Submitted: sell 0.13 BNB/ETH @ 0.08422
 ```
-
 ## Running automatically
 
 You can set this to run in a cron job on a unix system by putting something along the lines of (adjust for your path and email address) below
@@ -143,4 +144,4 @@ MAILTO=matt@example.com
 */5 * * * * OUTPUT=`cd /home/matt/crypto_balancer; bin/crypto_balancer --trade binance`; echo "$OUTPUT" | grep -q "No balancing needed" || echo "$OUTPUT"
 ```
 
-This will run the script every 5 minutes, and will email you only if some balancing (or an error) occurs.
+This will run the script every 5 minutes and will email you only if some balancing (or an error) occurs.
