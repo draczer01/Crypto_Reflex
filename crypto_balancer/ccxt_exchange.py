@@ -11,7 +11,7 @@ class CCXTExchange():
         self.name = name
         self.currencies = currencies
         self.exch = getattr(ccxt, name)({'nonce': ccxt.Exchange.milliseconds})
-        if os.getenv("FIXIE_URL") is not None:
+        if os.getenv("PROXY_URL") is not None:
             self.exch.proxies= {
                 "http"  : os.environ.get('PROXY_URL', ''),
                 "https" : os.environ.get('PROXY_URL', '')

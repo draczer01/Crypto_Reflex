@@ -1,3 +1,4 @@
+import json
 class Order():
     def __init__(self, pair, direction, amount, price):
         if direction.upper() not in ['BUY', 'SELL']:
@@ -27,3 +28,6 @@ class Order():
     def __hash__(self):
         return hash((self.pair, self.direction, self.amount, self.price))
 
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)

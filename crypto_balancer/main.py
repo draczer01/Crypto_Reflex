@@ -23,7 +23,7 @@ def main(args=None):
         description='Balance holdings on an exchange.')
     parser.add_argument('--trade', action="store_true",
                         help='Actually place orders')
-    parser.add_argument('--json', action="json",
+    parser.add_argument('--json',
                         help='returns the data as a json')
     parser.add_argument('--force', action="store_true",
                         help='Force rebalance')
@@ -154,7 +154,7 @@ def main(args=None):
 
 
     if args.json:
-        return json.dumps({"portfolio_value": portfolio.valuation_quote, "currency": portfolio.quote_currency, "cost": total_fee, "successfull_orders": res['success'], "error_orders": res['errors'], "orders": res['orders'], "previous_portfolio": curr_portafolio , "proposed_portfolio":res['proposed_portfolio']})
+        return json.dumps({"portfolio_value": portfolio.valuation_quote, "currency": portfolio.quote_currency, "cost": total_fee})
 
 if __name__ == '__main__':
     main()
