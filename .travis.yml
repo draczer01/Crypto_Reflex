@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.6"
+  - "3.9"
 cache: pip
 install: 
  - pip install -U setuptools
@@ -9,7 +9,5 @@ install:
 # command to run tests
 script:
  - py.test --cov=crypto_reflex ./crypto_reflex/tests.py
-notifications:
- - slack: quernus:FSJYjitrzrSX83EAcD8MyNuE
 after_success:
  - coveralls
