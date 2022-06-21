@@ -2,7 +2,7 @@ import glob
 import json
 import pandas as pd
 
-from crypto_balancer.dummy_exchange import DummyExchange
+from crypto_reflex.dummy_exchange import DummyExchange
 
 
 LIMITS = {'BNB/BTC': {'amount': {'max': 90000000.0, 'min': 0.01},

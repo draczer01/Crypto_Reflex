@@ -1,6 +1,6 @@
 import logging
 
-from crypto_balancer.order import Order
+from crypto_reflex.order import Order
 
 logger = logging.getLogger(__name__)
 

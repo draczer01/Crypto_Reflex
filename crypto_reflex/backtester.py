@@ -1,6 +1,6 @@
-from crypto_balancer.backtest_exchange import BacktestExchange
-from crypto_balancer.simple_balancer import SimpleBalancer
-from crypto_balancer.portfolio import Portfolio
+from crypto_reflex.backtest_exchange import BacktestExchange
+from crypto_reflex.simple_balancer import SimpleBalancer
+from crypto_reflex.portfolio import Portfolio
 
 if __name__ == '__main__':
     Xbalances = {'XRP':3269.878282,
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     
     for t in range(10,100,10):
         threshold = t / 10.0
-        exchange = BacktestExchange('/Development/crypto_balancer/data/*.json', balances.copy())
+        exchange = BacktestExchange('/Development/crypto_reflex/data/*.json', balances.copy())
         portfolio = Portfolio.make_portfolio(targets, exchange, threshold, quote_currency="USD")
         balancer = SimpleBalancer()
         num_trades = 0

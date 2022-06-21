@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hammertoe/crypto_balancer.svg?branch=master)](https://travis-ci.org/hammertoe/crypto_balancer) [![Coverage Status](https://coveralls.io/repos/github/hammertoe/crypto_balancer/badge.svg?branch=master)](https://coveralls.io/github/hammertoe/crypto_balancer?branch=master)
+[![Build Status](https://travis-ci.org/hammertoe/crypto_reflex.svg?branch=master)](https://travis-ci.org/hammertoe/crypto_reflex) [![Coverage Status](https://coveralls.io/repos/github/hammertoe/crypto_reflex/badge.svg?branch=master)](https://coveralls.io/github/hammertoe/crypto_reflex?branch=master)
 
 # Cryptocurrency Portfolio Balancer
 
@@ -14,14 +14,14 @@ This fork was made to be used on Xponential crypto: https://xcryptofund.io
 
 Via Pip:
 ```
-pip install crypto_balancer
+pip install crypto_reflex
 ```
 
 Via source from Github:
 
 ```
 git clone https://github.com/draczer01/Crypto_Reflex.git
-cd crypto_balancer
+cd crypto_reflex
 virtualenv --python=python3 .
 . bin/activate
 pip install -r requirements.txt
@@ -54,7 +54,7 @@ To get the the data returned as json simply use: `--json`
 
 Dry run (don't actually trade) against Binance
 ```
-$ crypto_balancer binance
+$ crypto_reflex binance
 Connected to exchange: binance
 
 Current Portfolio:
@@ -72,7 +72,7 @@ No balancing needed
 
 To force it to rebalance regardless of if needed:
 ```
-$ crypto_balancer --force binance
+$ crypto_reflex --force binance
 Connected to exchange: binance
 
 Current Portfolio:
@@ -105,7 +105,7 @@ Orders:
 To get it to actually execute trades if needed:
 
 ```
-$ crypto_balancer --force --trade binance
+$ crypto_reflex --force --trade binance
 Connected to exchange: binance
 
 Current Portfolio:
@@ -141,7 +141,7 @@ in your crontab file:
 
 ```
 MAILTO=matt@example.com
-*/5 * * * * OUTPUT=`cd /home/matt/crypto_balancer; bin/crypto_balancer --trade binance`; echo "$OUTPUT" | grep -q "No balancing needed" || echo "$OUTPUT"
+*/5 * * * * OUTPUT=`cd /home/matt/crypto_reflex; bin/crypto_reflex --trade binance`; echo "$OUTPUT" | grep -q "No balancing needed" || echo "$OUTPUT"
 ```
 
 This will run the script every 5 minutes and will email you only if some balancing (or an error) occurs.

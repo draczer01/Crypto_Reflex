@@ -2,11 +2,11 @@ import unittest
 from pstats import Stats
 import cProfile
 
-from crypto_balancer.simple_balancer import SimpleBalancer
-from crypto_balancer.portfolio import Portfolio
-from crypto_balancer.dummy_exchange import DummyExchange
-from crypto_balancer.executor import Executor
-from crypto_balancer.order import Order
+from crypto_reflex.simple_balancer import SimpleBalancer
+from crypto_reflex.portfolio import Portfolio
+from crypto_reflex.dummy_exchange import DummyExchange
+from crypto_reflex.executor import Executor
+from crypto_reflex.order import Order
 
 import sys
 sys.path.append('..')      # XXX Probably needed to import your code
