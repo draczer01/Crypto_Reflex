@@ -19,6 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: rickstaa/action-create-tag@v1
     - name: Set up Python 3.9
       uses: actions/setup-python@v3
       with:
@@ -31,6 +32,4 @@ jobs:
         pip install coveralls
     - name: run tests
       run: |
-        py.test --cov=crypto_reflex ./crypto_reflex/tests.py
-    - name: build tag  
-      run: docker build . --file Dockerfile --tag ${{ github.repository }}:$(date +%s)
+        py.test --cov=crypto_reflex ./crypto_reflex/tests.py --tag ${{ github.repository }}:$(date +%s)
