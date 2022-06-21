@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hammertoe/crypto_reflex.svg?branch=master)](https://travis-ci.org/hammertoe/crypto_reflex) [![Coverage Status](https://coveralls.io/repos/github/hammertoe/crypto_reflex/badge.svg?branch=master)](https://coveralls.io/github/hammertoe/crypto_reflex?branch=master)
+[![Build Status](https://travis-ci.org/draczer01/crypto_reflex.svg?branch=master)](https://travis-ci.org/draczer01/crypto_reflex) [![Coverage Status](https://coveralls.io/repos/github/draczer01/crypto_reflex/badge.svg?branch=master)](https://coveralls.io/github/draczer01/crypto_reflex?branch=master)
 
 # Cryptocurrency Portfolio Balancer
 
