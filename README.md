@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/draczer01/crypto_reflex.svg?branch=master)](https://travis-ci.org/draczer01/crypto_reflex) [![Coverage Status](https://coveralls.io/repos/github/draczer01/crypto_reflex/badge.svg?branch=master)](https://coveralls.io/github/draczer01/crypto_reflex?branch=master)
-
 # Cryptocurrency Portfolio Balancer
 
 **USE AT YOUR OWN RISK. THIS TRADES REAL MONEY. NO WARRANTY IS GIVEN**
