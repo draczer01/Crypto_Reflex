@@ -20,7 +20,6 @@ setup(name='crypto_reflex',
       author = 'Draczer01',
       author_email = 'draczer01@gmail.com',
       url = 'https://github.com/draczer01/Crypto_Reflex',
-      download_url = 'https://github.com/draczer01/Crypto_Reflex/archive/1.0.0.tar.gz',
       keywords = ['cryptocurrency', 'portfolio', 'xrp', 'ethereum', 'bitcoin', 'btc', 'eth'],
       install_requires=[
           'ccxt',
