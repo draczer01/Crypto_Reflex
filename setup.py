@@ -20,7 +20,7 @@ setup(name='crypto_reflex',
       author = 'Draczer01',
       author_email = 'draczer01@gmail.com',
       url = 'https://github.com/draczer01/Crypto_Reflex',
-      keywords = ['cryptocurrency', 'portfolio', 'xrp', 'ethereum', 'bitcoin', 'btc', 'eth'],
+      keywords = ['cryptocurrency', 'portfolio', 'xrp', 'ethereum', 'bitcoin', 'btc', 'eth','balancer','rebalancer'],
       install_requires=[
           'ccxt',
       ],
