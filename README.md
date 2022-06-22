@@ -26,8 +26,23 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
+## Use the library in your projects
+
+```
+from crypto_reflex.crypto_reflex_lib import crypto_reflex_lib # import the ligrary
+cryptoReflex = crypto_reflex_lib
+rebalance = cryptoReflex("binance", "{\"XRP\": 40.0, \"XLM\": 20.0, \"BTC\": 10.0, \"ETH\": 10.0, \"BNB\": 10.0, \"USDT\": 10.0}", "API_KEY", "API_SECRET", 0.2)
+print(rebalance) # prints the output in JSON
+```
+example of a return in JSON:
+
+```
+{"portfolio_value": 3.8687923544999996, "currency": "USDT", "cost": "0.002321"}
+```
+
 ## Config
-Create a config file in `config.ini` with the definition of your exchange and portfolio percentages, and theshold (percent) that rebalancing is needed.
+THIS DOES NOT APPLY IF YOU ARE USING IT AS A LIBRARY
+Create a config file in `config.ini` with the definition of your exchange and portfolio percentages, and threshold (percent) that rebalancing is needed.
 An example config file is included at `config.ini.example` but below is all you need:
 
 ```
@@ -46,7 +61,7 @@ By default it values the portfolio in USDT, this can be changed with `--valuebas
 
 To configure a proxy, simply create an environment variable named `PROXY_URL`
 
-To get the the data returned as json simply use: `--json` 
+To get the data returned as JSON simply use: `--json` 
 
 ## Running
 
