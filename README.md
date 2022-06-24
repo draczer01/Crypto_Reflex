@@ -39,6 +39,20 @@ example of a return in JSON:
 ```
 {"portfolio_value": 3.8687923544999996, "currency": "USDT", "cost": "0.002321"}
 ```
+## error codes
+while using the library on your project, you may encounter the following statuses:
+
+0: no rebalancing needed
+1: rebalance successful
+2: target format is invalid
+3: incorrect target allocation
+4: could not find a better portfolio, please wait a while and retry
+
+example:
+
+```
+{"status": 1, "message": "Total target needs to equal 100, it is 98"}
+```
 
 ## Config
 THIS DOES NOT APPLY IF YOU ARE USING IT AS A LIBRARY
