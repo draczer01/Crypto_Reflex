@@ -42,11 +42,11 @@ example of a return in JSON:
 ## error codes
 while using the library on your project, you may encounter the following statuses:
 
-0: no rebalancing needed
-1: rebalance successful
-2: target format is invalid
-3: incorrect target allocation
-4: could not find a better portfolio, please wait a while and retry
+0: no rebalancing needed  
+1: rebalance successful  
+2: target format is invalid  
+3: incorrect target allocation  
+4: could not find a better portfolio, please wait a while and retry  
 
 example:
 
@@ -55,7 +55,7 @@ example:
 ```
 
 ## Config
-THIS DOES NOT APPLY IF YOU ARE USING IT AS A LIBRARY
+THIS DOES NOT APPLY IF YOU ARE USING IT AS A LIBRARY  
 Create a config file in `config.ini` with the definition of your exchange and portfolio percentages, and threshold (percent) that rebalancing is needed.
 An example config file is included at `config.ini.example` but below is all you need:
 
