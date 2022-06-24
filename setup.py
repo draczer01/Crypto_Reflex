@@ -6,7 +6,7 @@ with open(os.path.join(base_path, "README.md"), encoding='utf-8') as readme_file
     readme = readme_file.read()
 
 setup(name='crypto_reflex',
-      version='1.0.1',
+      version='1.0.2',
       packages=['crypto_reflex'],
       entry_points={
           'console_scripts': [

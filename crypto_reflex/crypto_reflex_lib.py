@@ -1,5 +1,4 @@
 import logging
-import sys
 import json
 
 from crypto_reflex.simple_balancer import SimpleBalancer
@@ -19,14 +18,14 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
 
     except ValueError:
         logger.error("Targets format invalid")
-        sys.exit(1)
+        return(json.dumps({"status": 2, "message": "Targets format invalid, make sure its in json" }))
  
     total_target = sum(targets.values())
     if total_target != 100:
         logger.error("Total target needs to equal 100, it is {}"
                      .format(total_target))
-        sys.exit(1)
-
+        return(json.dumps({"status": 3, "message": ("Total target needs to equal 100, it is " + str(total_target))}))
+                
     valuebase = valuebase
 
     exchange = CCXTExchange(exchange,
@@ -69,7 +68,7 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
         print()
     if not portfolio.needs_balancing and not force:
         print("No balancing needed")
-        sys.exit(0)
+        return json.dumps({"status": 0, "message": "No rebalancing needed"})
     if j == False:
         print("Balancing needed{}:".format(" [FORCED]" if force else ""))
         print()
@@ -78,7 +77,7 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
 
     if not portfolio:
         print("Could not calculate a better portfolio")
-        sys.exit(0)
+        return(json.dumps({"status": 4, "message": "Could not calculate a better portfolio please try again in a while" }))
 
     for cur in portfolio.balances:
         bal = portfolio.balances[cur]
@@ -119,6 +118,6 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
 
 
     if j:
-        return json.dumps({"portfolio_value": portfolio.valuation_quote, "currency": portfolio.quote_currency, "cost": total_fee})
+        return json.dumps({"status": 1 , "portfolio_value": portfolio.valuation_quote, "currency": portfolio.quote_currency, "cost": total_fee})
 
 
