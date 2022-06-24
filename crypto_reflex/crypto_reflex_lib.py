@@ -17,13 +17,10 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
         targets = json.loads(str(target))
 
     except ValueError:
-        logger.error("Targets format invalid")
         return(json.dumps({"status": 2, "message": "Targets format invalid, make sure its in json" }))
  
     total_target = sum(targets.values())
     if total_target != 100:
-        logger.error("Total target needs to equal 100, it is {}"
-                     .format(total_target))
         return(json.dumps({"status": 3, "message": ("Total target needs to equal 100, it is " + str(total_target))}))
                 
     valuebase = valuebase
@@ -67,7 +64,6 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
     
         print()
     if not portfolio.needs_balancing and not force:
-        print("No balancing needed")
         return json.dumps({"status": 0, "message": "No rebalancing needed"})
     if j == False:
         print("Balancing needed{}:".format(" [FORCED]" if force else ""))
@@ -76,7 +72,6 @@ def crypto_reflex_lib(exchange, target, api_key, api_secret, threshold, valuebas
     portfolio = res['proposed_portfolio']
 
     if not portfolio:
-        print("Could not calculate a better portfolio")
         return(json.dumps({"status": 4, "message": "Could not calculate a better portfolio please try again in a while" }))
 
     for cur in portfolio.balances:
